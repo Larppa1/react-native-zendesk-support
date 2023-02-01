@@ -57,7 +57,7 @@ class ZendeskSupportModule(reactContext: ReactApplicationContext) :
     }
     GlobalScope.launch(Dispatchers.Main) {
       // Help center configuration
-      val helpCenterConfigurationBuilder = HelpCenterActivity.builder().withEngines(ChatEngine.engine())
+      val helpCenterConfigurationBuilder = HelpCenterActivity.builder()
       options?.let {
         helpCenterConfigurationBuilder.withContactUsButtonVisible(
           it.takeIf { it.hasKey("hideContactSupport") }?.getBoolean("hideContactSupport") ?: false
